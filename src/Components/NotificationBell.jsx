@@ -172,14 +172,7 @@ export const NotificationBell = () => {
     }
   };
 
-  const handleDelete = async (notificationId) => {
-    try {
-      await deleteNotification(notificationId);
-    } catch (error) {
-      console.error(error);
-      toast.error("Failed to delete notification");
-    }
-  };
+ 
 
   const getNotificationIcon = (type) => {
     const iconProps = "w-5 h-5";
@@ -266,16 +259,6 @@ export const NotificationBell = () => {
                         </p>
                       </div>
                     </div>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleDelete(notification.id);
-                      }}
-                      className="p-1 text-gray-400 hover:text-red-500 flex-shrink-0 transition-colors"
-                      title="Delete"
-                    >
-                      <FiTrash2 className="w-4 h-4" />
-                    </button>
                   </div>
                 ))}
               </div>

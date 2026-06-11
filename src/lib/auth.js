@@ -8,7 +8,7 @@ export async function signUp(email, password, username = "") {
 
   if (error) throw error;
 
-  console.log("Auth signup successful:", data);
+  // console.log("Auth signup successful:", data);
 
   const displayName = username || email.split("@")[0];
 
@@ -26,7 +26,7 @@ export async function signUp(email, password, username = "") {
         .single();
 
       if (profileError) throw profileError;
-      console.log("Profile created successfully", profileData);
+      // console.log("Profile created successfully", profileData);
     } catch (profileError) {
       console.error("profile creation error:", profileError);
       // If profile creation fails due to RLS or missing session,
@@ -50,7 +50,7 @@ export async function signIn(email, password) {
   if (data?.user) {
     try {
       profile = await getUserProfile(data.user.id);
-      console.log("profile info ", profile);
+      // console.log("profile info ", profile);
     } catch (err) {
       console.error("Error with profile during signin:", err);
     }
