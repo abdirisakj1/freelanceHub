@@ -10,14 +10,14 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const cleanUp = onAuthChange(async (user) => {
-      console.log("Auth state changed, user:", user);
+      // console.log("Auth state changed, user:", user);
       setUser(user);
 
       if (user) {
         try {
-          console.log("Fetching profile for user ID:", user.id);
+          // console.log("Fetching profile for user ID:", user.id);
           const userProfile = await getUserProfile(user.id);
-          console.log("Fetched profile:", userProfile);
+          // console.log("Fetched profile:", userProfile);
           setProfile(userProfile);
         } catch (error) {
           console.error("Error fetching profile:", error);

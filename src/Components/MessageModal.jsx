@@ -109,12 +109,12 @@ export const MessageModal = ({
         
         // Send notification async (don't block on failure)
         if (otherUser?.id && jobTitle) {
-          console.log("📢 Sending notification:", {
-            recipientId: otherUser.id,
-            senderName: profile?.username,
-            jobTitle,
-            senderId: currentUserId,
-          });
+          // console.log(" Sending notification:", {
+          //   recipientId: otherUser.id,
+          //   senderName: profile?.username,
+          //   jobTitle,
+          //   senderId: currentUserId,
+          // });
           notifyNewMessage({
             recipientId: otherUser.id,
             senderName: profile?.username,
@@ -235,15 +235,15 @@ export const MessageModal = ({
 
         <form onSubmit={handleSend} className="border-t border-gray-100 shrink-0">
           {editingMessageId && (
-            <div className="px-6 py-2 bg-blue-50 border-b border-blue-200 flex items-center justify-between">
-              <p className="text-xs font-medium text-blue-700">Editing message...</p>
+            <div className="px-6 py-2 bg-green-50 border-b border-green-200 flex items-center justify-between">
+              <p className="text-xs font-medium text-green-700">Editing message...</p>
               <button
                 type="button"
                 onClick={() => {
                   setEditingMessageId(null);
                   setNewMessage("");
                 }}
-                className="text-xs text-blue-600 hover:text-blue-700 font-medium"
+                className="text-xs text-green-600 hover:text-green-700 font-medium"
               >
                 Cancel
               </button>

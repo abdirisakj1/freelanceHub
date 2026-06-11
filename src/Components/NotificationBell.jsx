@@ -44,7 +44,7 @@ export const NotificationBell = () => {
 
     // Subscribe to real-time notifications
     const unsubscribe = subscribeToNotifications(user.id, (payload) => {
-      console.log("📬 Realtime notification payload:", payload);
+      // console.log("📬 Realtime notification payload:", payload);
       
       // Check for INSERT event
       if (payload.eventType === "INSERT" || payload.event === "INSERT") {
@@ -66,7 +66,7 @@ export const NotificationBell = () => {
       } 
       // Check for DELETE event
       else if (payload.eventType === "DELETE" || payload.event === "DELETE") {
-        console.log("🗑️ Deleted notification:", payload.old);
+        // console.log("🗑️ Deleted notification:", payload.old);
         setNotifications((prev) => prev.filter((n) => n.id !== payload.old.id));
         if (!payload.old?.is_read) {
           setUnreadCount((prev) => Math.max(0, prev - 1));

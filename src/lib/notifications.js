@@ -8,7 +8,7 @@ export async function createNotification({
   type,
   jobId,
 }) {
-  console.log("🔔 Creating notification with data:", { userId, senderId, title, message, type, jobId });
+  // console.log(" Creating notification with data:", { userId, senderId, title, message, type, jobId });
   
   if (!userId) {
     console.error("❌ userId is missing!");
@@ -33,7 +33,7 @@ export async function createNotification({
     notificationData.job_id = jobId;
   }
 
-  console.log("📤 Sending to Supabase:", notificationData);
+  // console.log(" Sending to Supabase:", notificationData);
 
   const { data, error } = await supabase
     .from("notifications")
@@ -46,7 +46,7 @@ export async function createNotification({
     throw error;
   }
   
-  console.log("✅ Notification created:", data);
+  // console.log("✅ Notification created:", data);
   return data;
 }
 
@@ -129,11 +129,11 @@ export function subscribeToNotifications(userId, callback) {
       callback
     )
     .subscribe((status) => {
-      console.log(`Notification subscription status for ${userId}:`, status);
+      // console.log(`Notification subscription status for ${userId}:`, status);
     });
 
   return () => {
-    console.log("Unsubscribing from notifications:", userId);
+    // console.log("Unsubscribing from notifications:", userId);
     supabase.removeChannel(channel);
   };
 }

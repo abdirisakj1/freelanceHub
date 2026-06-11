@@ -39,12 +39,12 @@ export const ApplyModal = ({ isOpen, onClose, jobId, userId, job }) => {
       
       // Send notification async (don't block on failure)
       if (job?.created_by && job?.title) {
-        console.log("📢 Sending application notification:", {
-          employerId: job.created_by,
-          applicantName: fullName || profile?.username,
-          jobTitle: job.title,
-          senderId: userId,
-        });
+        // console.log("📢 Sending application notification:", {
+        //   employerId: job.created_by,
+        //   applicantName: fullName || profile?.username,
+        //   jobTitle: job.title,
+        //   senderId: userId,
+        // });
         notifyJobApplication({
           employerId: job.created_by,
           applicantName: fullName || profile?.username,
