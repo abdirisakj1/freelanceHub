@@ -92,12 +92,12 @@ export const ApplicantsPage = () => {
       toast.success("Application accepted!");
       
       // Send notification async (don't block on failure)
-      console.log("📢 Sending acceptance notification:", {
-        applicantId: app.applicant_id,
-        jobTitle: app.jobs?.title,
-        employerName: profile?.username,
-        senderId: user.id,
-      });
+      // console.log("📢 Sending acceptance notification:", {
+      //   applicantId: app.applicant_id,
+      //   jobTitle: app.jobs?.title,
+      //   employerName: profile?.username,
+      //   senderId: user.id,
+      // });
       notifyApplicationAccepted({
         applicantId: app.applicant_id,
         jobTitle: app.jobs?.title,
