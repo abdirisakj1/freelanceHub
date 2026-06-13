@@ -91,7 +91,7 @@ export const ApplicantsPage = () => {
 
       toast.success("Application accepted!");
       
-      // Send notification async (don't block on failure)
+      // Send notification async 
       // console.log("📢 Sending acceptance notification:", {
       //   applicantId: app.applicant_id,
       //   jobTitle: app.jobs?.title,
@@ -166,7 +166,7 @@ export const ApplicantsPage = () => {
       let aValue = a[sortConfig.key];
       let bValue = b[sortConfig.key];
       
-      // Handle nested properties like "jobs.title" or "full_name"
+      // Handle nested properties like "jobs.title" 
       if (sortConfig.key.includes(".")) {
         const keys = sortConfig.key.split(".");
         aValue = keys.reduce((obj, key) => obj?.[key], a);

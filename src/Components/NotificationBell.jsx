@@ -29,7 +29,7 @@ export const NotificationBell = () => {
     const loadNotifications = async () => {
       try {
         const data = await getNotifications(user.id);
-        // console.log("✅ Loaded notifications:", data);
+        // console.log(" Loaded notifications:", data);
         setNotifications(data);
         const count = data.filter((n) => !n.is_read).length;
         setUnreadCount(count);
@@ -74,7 +74,6 @@ export const NotificationBell = () => {
       }
     });
 
-    // Fallback: Poll for notifications every 10 seconds if real-time isn't working
     const pollInterval = setInterval(() => {
       loadNotifications();
     }, 10000);
@@ -159,7 +158,7 @@ export const NotificationBell = () => {
       const count = data.filter((n) => !n.is_read).length;
       setUnreadCount(count);
     } catch (error) {
-      console.error("❌ Error refreshing notifications:", error);
+      console.error("Error refreshing notifications:", error);
     }
   };
 

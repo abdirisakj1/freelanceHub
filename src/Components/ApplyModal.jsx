@@ -37,9 +37,9 @@ export const ApplyModal = ({ isOpen, onClose, jobId, userId, job }) => {
       setPhone("");
       setMessage("");
       
-      // Send notification async (don't block on failure)
+      // Send notification async 
       if (job?.created_by && job?.title) {
-        // console.log("📢 Sending application notification:", {
+        // console.log(" Sending application notification:", {
         //   employerId: job.created_by,
         //   applicantName: fullName || profile?.username,
         //   jobTitle: job.title,
@@ -51,7 +51,7 @@ export const ApplyModal = ({ isOpen, onClose, jobId, userId, job }) => {
           jobTitle: job.title,
           senderId: userId,
           jobId,
-        }).catch((err) => console.error("❌ Application notification error:", err));
+        }).catch((err) => console.error(" Application notification error:", err));
       }
     } catch (error) {
       console.error(error);
